@@ -1,386 +1,286 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Syloadgen — Brand Videos & Lead Generation</title>
-  <meta name="description" content="Syloadgen creates high-converting brand videos and lead-gen funnels to scale businesses.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="/assets/logo-favicon.png" type="image/png">
+  <meta name="description" content="Syloadgen — we create high-converting brand videos and generate qualified leads to grow your business." />
+
   <style>
     :root{
-      --bg:#f6fbfc; /* very light cyan */
-      --card:#ffffff;
-      --muted:#6b7280;
-      --navy:#042a2b;
-      --teal:#0ea5a4; /* accent */
-      --ice:#e6fbfb;
-      --glass: rgba(255,255,255,0.6);
+      --bg: #f4fbfb;
+      --nav: #ffffff;
+      --teal: #00b3a6;
+      --navy: #042a2b;
+      --muted: #7b8c8c;
+      --glass: rgba(255,255,255,0.85);
+      --card: #ffffff;
+      --max-width: 1200px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--navy);background:linear-gradient(180deg,var(--bg),#f1fbfb)}
-    a{text-decoration:none;color:inherit}
 
-    /* header */
-    header{display:flex;align-items:center;justify-content:space-between;padding:20px 36px;background:transparent;backdrop-filter:saturate(120%) blur(6px)}
-    .logo{font-weight:800;color:var(--navy);letter-spacing:-0.4px}
-    nav{display:flex;gap:18px;align-items:center}
-    .btn{background:var(--teal);color:#042a2b;padding:10px 16px;border-radius:10px;font-weight:700;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(14,165,164,0.12)}
-    .ghost{padding:9px 14px;border-radius:10px;border:1px solid rgba(4,42,43,0.06);font-weight:600}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    body{background:linear-gradient(180deg,#f7fdfd 0%,var(--bg) 100%);color:var(--navy);-webkit-font-smoothing:antialiased;}
 
-    /* hero */
-    .hero{display:grid;grid-template-columns:1fr 480px;gap:36px;align-items:center;padding:64px 36px}
-    .kicker{display:inline-block;background:linear-gradient(90deg, rgba(14,165,164,0.12), rgba(4,42,43,0.02));padding:8px 12px;border-radius:999px;color:var(--navy);font-weight:700;margin-bottom:10px}
-    h1{font-size:40px;margin:6px 0 12px;line-height:1.02}
-    p.lead{color:var(--muted);margin:0 0 22px;font-size:16px}
+    /* ---------- NAV / HEADER ---------- */
+    header{
+      background:var(--nav);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 6px 18px rgba(6,18,30,0.04);
+      position:sticky; top:0; z-index:30;
+    }
+    .container{max-width:var(--max-width); margin:0 auto; padding:20px 24px; display:flex; align-items:center; gap:16px;}
+    .brand-wrap{display:flex; align-items:center; gap:18px; margin-right:auto; transition:transform .36s ease;}
+    .logo-box{
+  width:56px; height:56px; 
+  display:flex; align-items:center; justify-content:center;
+  background:transparent !important;
+  box-shadow:none !important;
+}
 
-    /* card styles */
-    .card{background:var(--card);border-radius:14px;padding:18px;box-shadow:0 8px 28px rgba(4,42,43,0.06)}
-    .highlight{color:var(--teal);font-weight:800}
+    .logo-box img{width: 100px; height:46px; object-fit:contain; display:block; transform:translateZ(0);}
+    .brand-name{font-weight:800; font-size:18px; letter-spacing:-0.3px; color:var(--navy);}
+    .brand-sub{font-size:12px; color:var(--muted); margin-top:2px;}
 
-    /* services */
-    .services{padding:40px 36px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    nav{display:flex; gap:12px; align-items:center;}
+    .btn{background:var(--teal); color:#fff; border:none; padding:10px 16px; border-radius:10px; font-weight:700; cursor:pointer;}
+    .ghost{background:transparent; border:1px solid rgba(4,42,43,0.06); padding:8px 12px; border-radius:10px; color:var(--navy); cursor:pointer;}
 
-    /* case */
-    .case-section{padding:40px 36px}
-    .case-thumb{height:180px;border-radius:10px;background:linear-gradient(120deg,#dff7f6,#eefefc);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy)}
+    /* ---------- HERO ---------- */
+    .hero{max-width:var(--max-width); margin:48px auto; padding:40px 24px; display:flex; gap:28px; align-items:flex-start;}
+    .hero-left{flex:1;}
+    .tag{display:inline-block; background:rgba(0,179,166,0.08); color:var(--teal); padding:8px 12px; border-radius:999px; font-weight:700; font-size:13px;}
+    h1{font-size:44px; margin:18px 0 12px; line-height:1.02; color:var(--navy);}
+    p.lead{color:var(--muted); font-size:16px; margin-bottom:22px;}
 
-    /* contact */
-    .contact{padding:44px 36px}
-    form input, form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #e6eef0;margin-top:8px}
+    /* ---------- TRUST / STATS CARD ---------- */
+    .card{background:var(--card); border-radius:16px; padding:22px; box-shadow:0 18px 40px rgba(2,10,20,0.06); width:380px;}
+    .stat{font-weight:800; color:var(--teal); font-size:20px;}
 
-    footer{padding:28px 36px;border-top:1px solid rgba(4,42,43,0.03);color:var(--muted)}
+    /* ---------- WHAT WE DO ---------- */
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin:40px auto; max-width:var(--max-width); padding:0 24px 80px;}
 
-    /* responsive */
-    .nav-toggle{display:none}
-    @media(max-width:980px){.hero{grid-template-columns:1fr;gap:22px;padding:28px 20px}.nav-desktop{display:none}.nav-toggle{display:inline-block}}
+    .service{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 8px 20px rgba(2,10,20,0.04);}
 
-    /* small animations */
-    .fade-up{transform:translateY(10px);opacity:0;animation:fadeUp .7s ease-out forwards}
-    @keyframes fadeUp{to{transform:none;opacity:1}}
+    /* ---------- CENTERED LOGO + NAME (bigger on top area) ---------- */
+    .hero-brand{
+      display:flex; align-items:center; gap:22px; margin-bottom:12px;
+      transform:translateY(0); transition:transform .45s cubic-bezier(.2,.9,.2,1);
+    }
+    .hero-brand .logo-big{width:110px;height:110px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6f5df9,#ff6bd6);box-shadow:0 24px 60px rgba(12,20,40,0.08);}
+    .logo-big img{width:86px;height:86px;object-fit:contain;display:block;}
+    .hero-brand .title{font-size:28px;font-weight:900;color:var(--navy);}
 
-    /* badges */
-    .trusted{display:flex;gap:12px;align-items:center;color:var(--muted);margin-top:18px;font-size:14px}
+    /* ---------- INTRO OVERLAY (will be inserted by script) ---------- */
+    /* (the overlay block below is provided by the script block later) */
+
+    /* ---------- FOOTER ---------- */
+    footer{padding:40px 24px; text-align:center; color:var(--muted);}
+
+    /* Responsive */
+    @media (max-width:900px){
+      h1{font-size:28px;}
+      .logo-big{width:84px;height:84px;}
+      .hero{flex-direction:column; align-items:flex-start;}
+      .card{width:100%;}
+    }
   </style>
 </head>
 <body>
-  <header style="display:flex;align-items:center;justify-content:center;padding:20px 36px;background:transparent;backdrop-filter:saturate(120%) blur(6px);">
-  <div class="logo" style="display:flex;align-items:center;gap:14px;">
-    <img src="/assets/syloadgen-logo.png" alt="Syloadgen" style="height:110px;display:block;transition:transform .4s ease;cursor:pointer;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-    <span style="font-size:38px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;transition:opacity .5s ease, transform .5s ease;display:inline-block;" onmouseover="this.style.opacity='0.85'; this.style.transform='translateX(4px)'" onmouseout="this.style.opacity='1'; this.style.transform='translateX(0)';">Syloadgen</span>
-  </div>
-</header>
 
-  <div id="mobileNav" style="display:none;padding:18px;border-bottom:1px solid rgba(4,42,43,0.03)">
-    <a href="#services" style="display:block;padding:10px 0">Services</a>
-    <a href="#work" style="display:block;padding:10px 0">Work</a>
-    <a href="#about" style="display:block;padding:10px 0">About</a>
-    <a href="#contact" style="display:block;padding:10px 0" class="btn">Get a Proposal</a>
-  </div>
-
-  <main>
-    <section class="hero">
-      <!-- Intro overlay (plays a selected brand video on entry) -->
-      <div id="introOverlay" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(2,6,23,0.85);z-index:1200;padding:0;backdrop-filter:blur(6px);cursor:pointer;">
-        <!-- Click anywhere to skip: overlay handles click -->
-        <div style="width:100%;display:flex;align-items:center;justify-content:center;">
-          <video id="introVideo" playsinline autoplay muted loop style="width:90vw;max-width:1200px;height:auto;border-radius:0;display:block;background:#000;box-shadow:none;cursor:pointer">
-            <source src="/assets/videos/intro1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+  <!-- ======= HEADER ======= -->
+  <header>
+    <div class="container">
+      <div class="brand-wrap" id="brandWrap">
+        <div class="logo-box">
+          <img src="assets/syloadgen-logo.png" alt="Syloadgen logo" id="headerLogo">
         </div>
-        <!-- controls (muted) placed visually but clicks won't bubble to overlay because we stopPropagation on clicks -->
-        <div style="position:fixed;top:22px;right:22px;display:flex;gap:10px;z-index:1300">
-          <button id="skipIntro" class="ghost" style="background:rgba(255,255,255,0.06);color:#fff;border:1px solid rgba(255,255,255,0.08);padding:10px 12px;border-radius:8px;font-weight:700;">Skip Intro</button>
-          <button id="muteToggle" class="btn" style="background:rgba(255,255,255,0.06);color:#fff;padding:10px 12px;border-radius:8px;font-weight:700;">Mute</button>
-        </div>
-      </div>
-
-      <!-- Existing hero content" (behind overlay) -->
-      <div>
-        <div class="kicker">Brand Video Production • Lead Generation • Growth Support</div>
-        <h1 class="fade-up">We make <span class="highlight">high-converting brand videos</span> and generate qualified leads to grow your business</h1>
-        <p class="lead fade-up" style="animation-delay:.08s">Short-form & long-form videos, targeted lead-gen funnels, and ongoing growth support — creative storytelling that drives measurable customer acquisition.</p>
-        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:12px">
-          <a href="#contact" class="btn">Get a Proposal</a>
-          <a href="#work" class="ghost">See Case Studies</a>
-          <a href="#services" class="ghost">Services</a>
-        </div>
-        <div class="trusted">
-          <div style="font-weight:700">Trusted by</div>
-          <div style="display:flex;gap:10px;align-items:center;opacity:.9"><img src="https://via.placeholder.com/80x24?text=BrandA" alt="" style="height:24px"><img src="https://via.placeholder.com/80x24?text=BrandB" alt="" style="height:24px"><img src="https://via.placeholder.com/80x24?text=BrandC" alt="" style="height:24px"></div>
-        </div>
-      </div>
-
-      <div>
-        <div class="card" style="height:360px;display:flex;flex-direction:column;justify-content:space-between;padding:20px">
-          <div>
-            <div style="font-weight:800;font-size:18px">Campaign Snapshot</div>
-            <div style="color:var(--muted);margin-top:8px">UGC-led ad + landing funnel for a D2C brand — 4.6x ROAS and 2.3x increase in monthly leads.</div>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
-            <div style="background:var(--ice);padding:14px;border-radius:10px;text-align:center">
-              <div style="font-weight:800;font-size:20px">4.6x</div>
-              <div style="color:var(--muted);font-size:13px">ROAS</div>
-            </div>
-            <div style="background:linear-gradient(180deg,#ffffff,#f8fffe);padding:14px;border-radius:10px;text-align:center">
-              <div style="font-weight:800;font-size:20px">+230%</div>
-              <div style="color:var(--muted);font-size:13px">Monthly Leads</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="services">
-      <div style="max-width:1100px;margin:0 auto">
-        <h2 style="margin:0 0 12px">What we do</h2>
-        <p class="lead">From concept to conversion — we create powerful visual stories and funnels that bring customers.</p>
-        <div class="grid" style="margin-top:18px">
-          <div class="card">
-            <h3>Brand Video Production</h3>
-            <p style="color:var(--muted);margin-top:8px">Hero films, product ads, and a creative bank of short-form clips optimized for ads and social platforms.</p>
-            <ul style="color:var(--muted);margin-top:8px;padding-left:18px">
-              <li>Script & storyboarding</li>
-              <li>Production & editing</li>
-              <li>Ad-ready vertical edits</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Lead Generation</h3>
-            <p style="color:var(--muted);margin-top:8px">High-intent funnels using paid social & search, landing pages and email nurturing to convert prospects into customers.</p>
-          </div>
-          <div class="card">
-            <h3>Growth Support & Strategy</h3>
-            <p style="color:var(--muted);margin-top:8px">Channel prioritization, experimentation roadmaps and a growth playbook tailored to your stage and budget.</p>
-          </div>
-          <div class="card">
-            <h3>Analytics & CRO</h3>
-            <p style="color:var(--muted);margin-top:8px">Tracking, dashboards and landing page optimisation to reduce CAC and increase LTV.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="work" class="case-section">
-      <div style="max-width:1100px;margin:0 auto">
-        <h2>Case Studies</h2>
-        <div class="grid" style="margin-top:18px">
-          <div class="card">
-            <div class="case-thumb">D2C Skincare — 4.6x ROAS</div>
-            <p style="color:var(--muted);margin-top:10px">UGC-centric short videos + optimized landing funnel. Rapid creative testing.</p>
-            <a href="#" style="display:inline-block;margin-top:10px;font-weight:700">Read case</a>
-          </div>
-          <div class="card">
-            <div class="case-thumb">B2B SaaS — 3x MQLs</div>
-            <p style="color:var(--muted);margin-top:10px">Product explainer videos + targeted paid campaigns to scale lead quality.</p>
-            <a href="#" style="display:inline-block;margin-top:10px;font-weight:700">Read case</a>
-          </div>
-          <div class="card">
-            <div class="case-thumb">Local SMB — 2.8x Revenue</div>
-            <p style="color:var(--muted);margin-top:10px">End-to-end creative + paid strategy for sustained local growth.</p>
-            <a href="#" style="display:inline-block;margin-top:10px;font-weight:700">Read case</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" style="padding:36px">
-      <div style="max-width:900px;margin:0 auto">
-        <h2>About Syloadgen</h2>
-        <p style="color:var(--muted)">We’re a compact team of video producers, performance marketers and growth strategists. We help brands tell stories that convert and build systems that bring predictable leads.</p>
-        <div style="display:flex;gap:12px;margin-top:12px;flex-wrap:wrap;color:var(--muted)">
-          <div style="background:var(--card);padding:12px;border-radius:10px;box-shadow:0 8px 18px rgba(4,42,43,0.04)"><strong>Founded</strong><div>20XX</div></div>
-          <div style="background:var(--card);padding:12px;border-radius:10px;box-shadow:0 8px 18px rgba(4,42,43,0.04)"><strong>HQ</strong><div>[City, Country]</div></div>
-          <div style="background:var(--card);padding:12px;border-radius:10px;box-shadow:0 8px 18px rgba(4,42,43,0.04)"><strong>Clients</strong><div>D2C • SaaS • SMBs</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 340px;gap:24px">
         <div>
-          <h2>Start a project</h2>
-          <p style="color:var(--muted)">Tell us about your goals — we'll reply with a custom plan and a ballpark investment.</p>
-          <form onsubmit="event.preventDefault();window.location='mailto:hello@syloadgen.com?subject='+encodeURIComponent(document.getElementById('subject').value)+'&body='+encodeURIComponent(document.getElementById('message').value+"
-
-Contact: "+document.getElementById('email').value);">
-            <label style="display:block;margin-top:8px">Your email</label>
-            <input id="email" type="email" required>
-            <label style="display:block;margin-top:8px">Subject</label>
-            <input id="subject" required>
-            <label style="display:block;margin-top:8px">Message</label>
-            <textarea id="message" rows="6" required></textarea>
-            <div style="margin-top:12px"><button class="btn" type="submit">Send</button></div>
-          </form>
+          <div class="brand-name">Syloadgen</div>
+          <div class="brand-sub">Generating Momentum — Brand Videos & Lead Gen</div>
         </div>
-        <div style="align-self:start">
-          <div class="card">
-            <h3>Quick info</h3>
-            <p style="color:var(--muted);margin-top:8px">Average contract: ₹2L–₹10L / month.<br>Typical clients: D2C, SaaS, SMBs.</p>
-            <p style="margin-top:12px;color:var(--muted)"><strong>Email:</strong> hello@syloadgen.com<br><strong>Phone:</strong> +91 98765 43210</p>
+      </div>
+
+      <nav>
+        <button class="ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Services</button>
+        <button class="ghost" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">Work</button>
+        <button class="btn" onclick="window.location.hash='contact'">Get a Proposal</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= HERO / MAIN ======= -->
+  <main>
+    <section class="hero" aria-label="Intro">
+      <div class="hero-left">
+        <div class="hero-brand" id="heroBrand">
+          <div class="logo-big">
+            <img src="assets/syloadgen-logo.png" alt="Syloadgen big logo">
+          </div>
+          <div>
+            <div class="title">We make <span style="color:var(--teal)">high-converting brand videos</span> and generate qualified leads</div>
+            <p class="lead">Short-form & long-form videos, targeted lead-gen funnels, and ongoing growth support that drives measurable customer acquisition.</p>
+            <div style="display:flex; gap:12px;">
+              <button class="btn" onclick="window.location.hash='proposal'">Get a Proposal</button>
+              <button class="ghost" onclick="window.location.hash='case-studies'">See Case Studies</button>
+            </div>
           </div>
         </div>
       </div>
+
+      <aside class="card" aria-hidden="true">
+        <div style="font-weight:800; margin-bottom:6px;">Campaign Snapshot</div>
+        <div style="color:var(--muted); font-size:14px; margin-bottom:14px;">UGC-led ad + landing funnel for a D2C brand — 4.6x ROAS and +230% monthly leads</div>
+        <div style="display:flex; gap:12px;">
+          <div style="background:rgba(0,179,166,0.08); padding:12px 14px; border-radius:10px; min-width:90px; text-align:center;">
+            <div style="font-weight:900; font-size:18px; color:var(--navy);">4.6x</div>
+            <div style="font-size:12px; color:var(--muted);">ROAS</div>
+          </div>
+          <div style="background:rgba(0,179,166,0.04); padding:12px 14px; border-radius:10px; min-width:120px; text-align:center;">
+            <div style="font-weight:900; font-size:18px; color:var(--navy);">+230%</div>
+            <div style="font-size:12px; color:var(--muted);">Monthly Leads</div>
+          </div>
+        </div>
+      </aside>
     </section>
+
+    <section id="services" class="grid" aria-label="What we do">
+      <div class="service">
+        <h3>Brand Video Production</h3>
+        <p style="color:var(--muted)">Hero films, product ads, and a creative bank of short-form content to scale performance.</p>
+      </div>
+      <div class="service">
+        <h3>Lead Generation</h3>
+        <p style="color:var(--muted)">High-intent funnels using paid social & search, landing pages, and conversion optimization.</p>
+      </div>
+      <div class="service">
+        <h3>Growth Support & Strategy</h3>
+        <p style="color:var(--muted)">Ongoing optimization, reporting and creative testing that improves ROAS over time.</p>
+      </div>
+      <div class="service">
+        <h3>Analytics & CRO</h3>
+        <p style="color:var(--muted)">Tracking, dashboards and landing page experimentation to lift conversion rates.</p>
+      </div>
+    </section>
+
+    <section id="work" style="max-width:var(--max-width); margin:0 auto 80px; padding:0 24px;">
+      <h2 style="margin-top:10px;">Selected Work</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:12px;">
+        <div style="background:var(--card); padding:16px; border-radius:12px;">Case study 1</div>
+        <div style="background:var(--card); padding:16px; border-radius:12px;">Case study 2</div>
+        <div style="background:var(--card); padding:16px; border-radius:12px;">Case study 3</div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px">
-      <div>© <span id="year"></span> Syloadgen • Built for growth</div>
-      <div style="color:var(--muted);font-size:14px">Made with ❤️ — <a href="#privacy">Privacy</a></div>
-    </div>
+    © <span id="year"></span> Syloadgen — Brand Videos & Lead Generation
   </footer>
 
+  <!-- ====== INTRO OVERLAY: enlarged, bezel-free, click-anywhere-to-skip ====== -->
+  <style>
+    /* Intro overlay styles (kept here for clarity) */
+    #introOverlay{
+      position:fixed; inset:0; background: rgba(2,6,10,0.48);
+      display:flex; justify-content:center; align-items:center; z-index:99999;
+      transition:opacity .28s ease; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    }
+    .intro-player{
+      width:92vw; max-width:1280px; aspect-ratio:16/9; background:#000; border-radius:10px; overflow:hidden;
+      box-shadow:0 40px 120px rgba(2,8,20,0.6); position:relative; display:flex; align-items:center; justify-content:center;
+    }
+    #introVideo{ width:100%; height:100%; object-fit:cover; display:block; background:#000; }
+    .intro-controls{ position:absolute; top:14px; right:16px; display:flex; gap:10px; z-index:10; }
+    .intro-controls button{ background:rgba(255,255,255,0.08); color:#fff; border:1px solid rgba(255,255,255,0.12); padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:700; }
+    .intro-controls button:active{ transform:translateY(1px); }
+    .hidden{ display:none !important; }
+  </style>
+
+  <div id="introOverlay" role="dialog" aria-label="Intro video overlay">
+    <div class="intro-player" id="introPlayer" role="presentation">
+      <video id="introVideo" playsinline autoplay muted preload="auto" poster="assets/videos/intro1.mp4">
+        <source src="assets/videos/intro1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="intro-controls" aria-hidden="false">
+        <button id="skipIntro" aria-label="Skip intro">Skip</button>
+        <button id="muteToggle" aria-label="Toggle mute">Mute</button>
+      </div>
+    </div>
+  </div>
+  <!-- ====== END INTRO OVERLAY ====== -->
+
   <script>
+    // small helpers
     document.getElementById('year').textContent = new Date().getFullYear();
-    document.querySelector('.nav-toggle').addEventListener('click',()=>{
-      const el = document.getElementById('mobileNav');
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
-    });
-    // simple stagger for fade-up elements
-    document.querySelectorAll('.fade-up').forEach((el,i)=>{el.style.animationDelay=(i*80)+'ms'});
 
-    // ------------------ Auto-detect intro videos + thumbnails ------------------
-    const introOverlay = document.getElementById('introOverlay');
-    const skipBtn = document.getElementById('skipIntro');
-    const video = document.getElementById('introVideo');
-    const muteToggle = document.getElementById('muteToggle');
-    const thumbsContainer = document.getElementById('videoThumbs');
-    const SKIP_KEY = 'syloadgen_skip_intro_v1';
+    (function(){
+      const SKIP_KEY = 'syloadgen_skip_intro_v1';
+      const overlay = document.getElementById('introOverlay');
+      const video = document.getElementById('introVideo');
+      const skipBtn = document.getElementById('skipIntro');
+      const muteBtn = document.getElementById('muteToggle');
 
-    // If user previously skipped, don't show intro
-    if(localStorage.getItem(SKIP_KEY) === 'true'){
-      if(introOverlay) introOverlay.style.display='none';
-    }
-
-    // helper: test if a file exists via fetch HEAD (fallback to GET)
-    async function fileExists(url){
-      try{
-        const res = await fetch(url, {method:'HEAD'});
-        return res.ok;
-      }catch(e){
-        try{ const r2 = await fetch(url); return r2.ok; }catch(e){ return false; }
+      function hideOverlay() {
+        if(!overlay) return;
+        overlay.style.opacity = '0';
+        setTimeout(()=> overlay.classList.add('hidden'), 320);
+        try { video.pause(); } catch(e){}
+        try { localStorage.setItem(SKIP_KEY, 'true'); } catch(e){}
       }
-    }
 
-    // create a thumbnail from a video URL (capture first available frame)
-    function createThumbFromVideo(videoUrl){
-      return new Promise((resolve)=>{
-        const v = document.createElement('video');
-        v.crossOrigin = 'anonymous';
-        v.preload = 'metadata';
-        v.muted = true;
-        v.src = videoUrl + '#t=0.5'; // try to jump to 0.5s
-        v.addEventListener('loadeddata',()=>{
-          try{
-            const c = document.createElement('canvas');
-            c.width = Math.min(480, v.videoWidth || 480);
-            c.height = Math.min(270, v.videoHeight || 270);
-            const ctx = c.getContext('2d');
-            ctx.drawImage(v,0,0,c.width,c.height);
-            c.toBlob(blob=>{
-              const url = URL.createObjectURL(blob);
-              resolve(url);
-            }, 'image/jpeg', 0.8);
-          }catch(e){
-            resolve('');
-          }
-        });
-        // fallback: if can't load, resolve empty
-        setTimeout(()=>resolve(''),5000);
+      // If user skipped before, hide overlay immediately
+      try {
+        if (localStorage.getItem(SKIP_KEY) === 'true') {
+          if (overlay) overlay.classList.add('hidden');
+        }
+      } catch(e){ /* ignore storage errors */ }
+
+      // Attempt to autoplay (muted)
+      try { video.muted = true; video.play().catch(()=>{}); } catch(e){}
+
+      // Click anywhere on overlay to skip
+      overlay.addEventListener('click', function(e){
+        // If the click is on the mute or skip button, they handle it separately.
+        hideOverlay();
+      }, {passive:true});
+
+      // Skip button
+      skipBtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        hideOverlay();
+      }, {passive:true});
+
+      // Mute toggle (do not close overlay)
+      muteBtn.addEventListener('click', function(e){
+        e.stopPropagation();
+        if (!video) return;
+        video.muted = !video.muted;
+        muteBtn.textContent = video.muted ? 'Unmute' : 'Mute';
+      }, {passive:true});
+
+      // Close when video ends
+      video.addEventListener('ended', function(){
+        hideOverlay();
+      }, {passive:true});
+
+      // ESC to skip
+      document.addEventListener('keyup', function(e){
+        if (e.key === 'Escape') hideOverlay();
       });
-    }
 
-    // build thumbnails by checking for files intro1..intro8
-    (async function buildIntroList(){
-      const found = [];
-      for(let i=1;i<=8;i++){
-        const vUrl = `/assets/videos/intro${i}.mp4`;
-        const exists = await fileExists(vUrl);
-        if(exists){
-          found.push({src:vUrl, index:i});
-        }
-      }
+      // Safety: if poster shows black (video failed), give users ability to skip with visible controls
+      video.addEventListener('error', function(){
+        // keep overlay but ensure controls visible
+        skipBtn.style.display = 'inline-block';
+        muteBtn.style.display = 'inline-block';
+      });
 
-      if(found.length===0){
-        // no videos found, hide overlay
-        if(introOverlay) introOverlay.style.display='none';
-        return;
-      }
-
-      // set first video
-      video.src = found[0].src;
-      video.load();
-      video.play().catch(()=>{});
-
-      // populate thumbnails
-      thumbsContainer.innerHTML = '';
-      for(const item of found){
-        // attempt to find a provided thumb image
-        const thumbUrl = `/assets/videos/intro${item.index}-thumb.jpg`;
-        const thumbExists = await fileExists(thumbUrl);
-        let thumbToUse = thumbUrl;
-        if(!thumbExists){
-          // create from video
-          const gen = await createThumbFromVideo(item.src);
-          if(gen) thumbToUse = gen; else thumbToUse = 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180"><rect width="100%" height="100%" fill="#dfeff0"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#6b7280" font-size="16">Video '+item.index+'</text></svg>');
-        }
-
-        const btn = document.createElement('button');
-        btn.className = 'thumb';
-        btn.setAttribute('data-src', item.src);
-        btn.style.border = '0';
-        btn.style.padding = '0';
-        btn.style.borderRadius = '8px';
-        btn.style.overflow = 'hidden';
-        const img = document.createElement('img');
-        img.src = thumbToUse;
-        img.style.width = '100%';
-        img.style.display = 'block';
-        btn.appendChild(img);
-        btn.addEventListener('click',()=>{
-          video.pause();
-          video.src = item.src;
-          video.load();
-          video.play().catch(()=>{});
-        });
-        thumbsContainer.appendChild(btn);
-      }
-
+      // small debug
+      console.debug('Intro overlay ready');
     })();
-
-    // Skip button closes overlay and remembers choice
-    function skipIntroAction(){
-      if(introOverlay) introOverlay.style.transition='opacity .35s ease';
-      if(introOverlay) introOverlay.style.opacity='0';
-      setTimeout(()=>{ if(introOverlay) introOverlay.style.display='none'; },360);
-      localStorage.setItem(SKIP_KEY,'true');
-    }
-
-    if(skipBtn){
-      skipBtn.addEventListener('click',(e)=>{ e.stopPropagation(); skipIntroAction(); });
-    }
-
-    // Allow clicking anywhere on the overlay (including the video) to skip
-    if(introOverlay){
-      introOverlay.addEventListener('click',()=>{ skipIntroAction(); });
-    }
-
-    // prevent control clicks from bubbling to overlay
-    if(muteToggle){ muteToggle.addEventListener('click',(e)=>{ e.stopPropagation(); video.muted = !video.muted; muteToggle.textContent = video.muted ? 'Unmute' : 'Mute'; }); }
-
-    document.querySelectorAll('.thumb').forEach(btn=>{
-      btn.addEventListener('click',(e)=>{ e.stopPropagation(); const src = btn.getAttribute('data-src'); video.src = src; video.play(); });
-    });
-
-    // Auto-close after video plays once (if not looping)
-    // Auto-close after video finishes
-    video.addEventListener('ended',()=>{
-      skipIntroAction();
-    });
-
   </script>
+
 </body>
 </html>
