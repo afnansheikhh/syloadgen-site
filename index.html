@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Syloadgen — Brand Videos & Lead Generation</title>
   <meta name="description" content="Syloadgen — we create high-converting brand videos and generate qualified leads to grow your business." />
-
   <style>
     :root{
       --bg: #f4fbfb;
@@ -13,15 +12,13 @@
       --teal: #00b3a6;
       --navy: #042a2b;
       --muted: #7b8c8c;
-      --glass: rgba(255,255,255,0.85);
       --card: #ffffff;
       --max-width: 1200px;
     }
-
     html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
     body{background:linear-gradient(180deg,#f7fdfd 0%,var(--bg) 100%);color:var(--navy);-webkit-font-smoothing:antialiased;}
 
-    /* ---------- NAV / HEADER ---------- */
+    /* HEADER */
     header{
       background:var(--nav);
       backdrop-filter: blur(6px);
@@ -29,15 +26,16 @@
       position:sticky; top:0; z-index:30;
     }
     .container{max-width:var(--max-width); margin:0 auto; padding:20px 24px; display:flex; align-items:center; gap:16px;}
-    .brand-wrap{display:flex; align-items:center; gap:18px; margin-right:auto; transition:transform .36s ease;}
+    .brand-wrap{display:flex; align-items:center; gap:18px; margin-right:auto;}
+    /* transparent header logo */
     .logo-box{
-  width:56px; height:56px; 
-  display:flex; align-items:center; justify-content:center;
-  background:transparent !important;
-  box-shadow:none !important;
-}
-
-    .logo-box img{width: 100px; height:46px; object-fit:contain; display:block; transform:translateZ(0);}
+      width:56px; height:56px;
+      display:flex; align-items:center; justify-content:center;
+      background:transparent !important;
+      box-shadow:none !important;
+      overflow:hidden;
+    }
+    .logo-box img{width:46px; height:46px; object-fit:contain; display:block;}
     .brand-name{font-weight:800; font-size:18px; letter-spacing:-0.3px; color:var(--navy);}
     .brand-sub{font-size:12px; color:var(--muted); margin-top:2px;}
 
@@ -45,38 +43,32 @@
     .btn{background:var(--teal); color:#fff; border:none; padding:10px 16px; border-radius:10px; font-weight:700; cursor:pointer;}
     .ghost{background:transparent; border:1px solid rgba(4,42,43,0.06); padding:8px 12px; border-radius:10px; color:var(--navy); cursor:pointer;}
 
-    /* ---------- HERO ---------- */
+    /* HERO */
     .hero{max-width:var(--max-width); margin:48px auto; padding:40px 24px; display:flex; gap:28px; align-items:flex-start;}
     .hero-left{flex:1;}
     .tag{display:inline-block; background:rgba(0,179,166,0.08); color:var(--teal); padding:8px 12px; border-radius:999px; font-weight:700; font-size:13px;}
     h1{font-size:44px; margin:18px 0 12px; line-height:1.02; color:var(--navy);}
     p.lead{color:var(--muted); font-size:16px; margin-bottom:22px;}
 
-    /* ---------- TRUST / STATS CARD ---------- */
     .card{background:var(--card); border-radius:16px; padding:22px; box-shadow:0 18px 40px rgba(2,10,20,0.06); width:380px;}
     .stat{font-weight:800; color:var(--teal); font-size:20px;}
-
-    /* ---------- WHAT WE DO ---------- */
     .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin:40px auto; max-width:var(--max-width); padding:0 24px 80px;}
 
     .service{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 8px 20px rgba(2,10,20,0.04);}
 
-    /* ---------- CENTERED LOGO + NAME (bigger on top area) ---------- */
+    /* big logo in hero — transparent */
     .hero-brand{
       display:flex; align-items:center; gap:22px; margin-bottom:12px;
       transform:translateY(0); transition:transform .45s cubic-bezier(.2,.9,.2,1);
     }
-    .hero-brand .logo-big{width:110px;height:110px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6f5df9,#ff6bd6);box-shadow:0 24px 60px rgba(12,20,40,0.08);}
+    .logo-big{
+      width:110px;height:110px; display:flex;align-items:center;justify-content:center;
+      background:transparent !important; box-shadow:none !important; border-radius:16px; overflow:hidden;
+    }
     .logo-big img{width:86px;height:86px;object-fit:contain;display:block;}
-    .hero-brand .title{font-size:28px;font-weight:900;color:var(--navy);}
 
-    /* ---------- INTRO OVERLAY (will be inserted by script) ---------- */
-    /* (the overlay block below is provided by the script block later) */
-
-    /* ---------- FOOTER ---------- */
     footer{padding:40px 24px; text-align:center; color:var(--muted);}
 
-    /* Responsive */
     @media (max-width:900px){
       h1{font-size:28px;}
       .logo-big{width:84px;height:84px;}
@@ -87,7 +79,7 @@
 </head>
 <body>
 
-  <!-- ======= HEADER ======= -->
+  <!-- HEADER -->
   <header>
     <div class="container">
       <div class="brand-wrap" id="brandWrap">
@@ -103,12 +95,12 @@
       <nav>
         <button class="ghost" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Services</button>
         <button class="ghost" onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})">Work</button>
-        <button class="btn" onclick="window.location.hash='contact'">Get a Proposal</button>
+        <button class="btn" onclick="window.location.hash='proposal'">Get a Proposal</button>
       </nav>
     </div>
   </header>
 
-  <!-- ======= HERO / MAIN ======= -->
+  <!-- HERO / MAIN -->
   <main>
     <section class="hero" aria-label="Intro">
       <div class="hero-left">
@@ -117,7 +109,7 @@
             <img src="assets/syloadgen-logo.png" alt="Syloadgen big logo">
           </div>
           <div>
-            <div class="title">We make <span style="color:var(--teal)">high-converting brand videos</span> and generate qualified leads</div>
+            <div class="title" style="font-size:24px;font-weight:900;color:var(--navy)">We make <span style="color:var(--teal)">high-converting brand videos</span> and generate qualified leads</div>
             <p class="lead">Short-form & long-form videos, targeted lead-gen funnels, and ongoing growth support that drives measurable customer acquisition.</p>
             <div style="display:flex; gap:12px;">
               <button class="btn" onclick="window.location.hash='proposal'">Get a Proposal</button>
@@ -177,9 +169,8 @@
     © <span id="year"></span> Syloadgen — Brand Videos & Lead Generation
   </footer>
 
-  <!-- ====== INTRO OVERLAY: enlarged, bezel-free, click-anywhere-to-skip ====== -->
+  <!-- INTRO OVERLAY: always show on page load -->
   <style>
-    /* Intro overlay styles (kept here for clarity) */
     #introOverlay{
       position:fixed; inset:0; background: rgba(2,6,10,0.48);
       display:flex; justify-content:center; align-items:center; z-index:99999;
@@ -192,7 +183,6 @@
     #introVideo{ width:100%; height:100%; object-fit:cover; display:block; background:#000; }
     .intro-controls{ position:absolute; top:14px; right:16px; display:flex; gap:10px; z-index:10; }
     .intro-controls button{ background:rgba(255,255,255,0.08); color:#fff; border:1px solid rgba(255,255,255,0.12); padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:700; }
-    .intro-controls button:active{ transform:translateY(1px); }
     .hidden{ display:none !important; }
   </style>
 
@@ -209,14 +199,12 @@
       </div>
     </div>
   </div>
-  <!-- ====== END INTRO OVERLAY ====== -->
 
   <script>
-    // small helpers
+    // footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
     (function(){
-      const SKIP_KEY = 'syloadgen_skip_intro_v1';
       const overlay = document.getElementById('introOverlay');
       const video = document.getElementById('introVideo');
       const skipBtn = document.getElementById('skipIntro');
@@ -225,60 +213,41 @@
       function hideOverlay() {
         if(!overlay) return;
         overlay.style.opacity = '0';
-        setTimeout(()=> overlay.classList.add('hidden'), 320);
+        setTimeout(()=> { overlay.style.display = 'none'; }, 320);
         try { video.pause(); } catch(e){}
-        try { localStorage.setItem(SKIP_KEY, 'true'); } catch(e){}
       }
 
-      // If user skipped before, hide overlay immediately
-      try {
-        if (localStorage.getItem(SKIP_KEY) === 'true') {
-          if (overlay) overlay.classList.add('hidden');
-        }
-      } catch(e){ /* ignore storage errors */ }
-
-      // Attempt to autoplay (muted)
+      // Always attempt to play (muted)
       try { video.muted = true; video.play().catch(()=>{}); } catch(e){}
 
-      // Click anywhere on overlay to skip
-      overlay.addEventListener('click', function(e){
-        // If the click is on the mute or skip button, they handle it separately.
-        hideOverlay();
-      }, {passive:true});
+      // Clicking anywhere on overlay closes intro (stopPropagation handled in buttons)
+      overlay.addEventListener('click', function () { hideOverlay(); }, {passive:true});
 
-      // Skip button
+      // Skip button - prevent overlay click propagation and hide
       skipBtn.addEventListener('click', function(e){
         e.stopPropagation();
         hideOverlay();
       }, {passive:true});
 
-      // Mute toggle (do not close overlay)
+      // Mute toggle - do not close overlay
       muteBtn.addEventListener('click', function(e){
         e.stopPropagation();
-        if (!video) return;
+        if(!video) return;
         video.muted = !video.muted;
         muteBtn.textContent = video.muted ? 'Unmute' : 'Mute';
       }, {passive:true});
 
       // Close when video ends
-      video.addEventListener('ended', function(){
-        hideOverlay();
-      }, {passive:true});
+      video.addEventListener('ended', hideOverlay, {passive:true});
 
-      // ESC to skip
-      document.addEventListener('keyup', function(e){
-        if (e.key === 'Escape') hideOverlay();
-      });
+      // ESC key to skip
+      document.addEventListener('keyup', function(e){ if(e.key === 'Escape') hideOverlay(); });
 
-      // Safety: if poster shows black (video failed), give users ability to skip with visible controls
+      // If video error, ensure skip visible
       video.addEventListener('error', function(){
-        // keep overlay but ensure controls visible
         skipBtn.style.display = 'inline-block';
         muteBtn.style.display = 'inline-block';
       });
-
-      // small debug
-      console.debug('Intro overlay ready');
     })();
   </script>
 
